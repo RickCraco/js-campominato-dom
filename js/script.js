@@ -45,18 +45,7 @@ btn.addEventListener('click', function () {
     }
     */
 
-    for(let i = 0; i < numBombe;){
-        indiceCaselle = getRndInteger(0, numSquare - 1);
-        if(vetQuadrati[indiceCaselle].classList.contains('bomb')){
-            continue;
-        }else{
-            vetQuadrati[indiceCaselle].classList.add('bomb');
-            //console.log(vetQuadrati[indiceCaselle].innerHTML);
-            i++;
-        }
-    }
-
-    
+    generateBombs(indiceCaselle);
 
 })
 
@@ -104,6 +93,18 @@ function createSquare(rowSquare) {
     return square;
 }
 
+function generateBombs(indiceCaselle){
+    for(let i = 0; i < numBombe;){
+        indiceCaselle = getRndInteger(0, numSquare - 1);
+        if(vetQuadrati[indiceCaselle].classList.contains('bomb')){
+            continue;
+        }else{
+            vetQuadrati[indiceCaselle].classList.add('bomb');
+            //console.log(vetQuadrati[indiceCaselle].innerHTML);
+            i++;
+        }
+    }
+}
 
 function stampaBombe(vetQuadrati){
     for(let i = 0; i < vetQuadrati.length; i++){
