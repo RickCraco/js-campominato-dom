@@ -45,7 +45,7 @@ btn.addEventListener('click', function () {
     }
     */
 
-    generateBombs(indiceCaselle, vetQuadrati);
+    generateBombs(indiceCaselle, numSquare);
 
 })
 
@@ -93,7 +93,8 @@ function createSquare(rowSquare) {
     return square;
 }
 
-function generateBombs(indiceCaselle, vetQuadrati){
+function generateBombs(indiceCaselle, numSquare){
+
     for(let i = 0; i < numBombe;){
         indiceCaselle = getRndInteger(0, numSquare - 1);
         if(vetQuadrati[indiceCaselle].classList.contains('bomb')){
